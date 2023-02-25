@@ -6,6 +6,11 @@
     You have successfully authenticated with your Devise account.
     You are now ready to interact with this application.
   </p>
+  <% if current_user.admin? %>
+    There are <%= User.count %> users in the system.
+  <% end %>
+  <br>
+  <p>You are [ <%= current_user.role %> ]</p>
   <%= link_to "Sign Out", destroy_user_session_path, 'data-turbo-method': :delete, class: "btn btn-sm btn-danger" %>
 <% else %>
   <p class="text-muted">You are not signed in.</p>
