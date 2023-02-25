@@ -1,0 +1,14 @@
+<h1>Wellcome</h1>
+
+<% if current_user %>
+  <p>Hello <%= current_user.email %></p>
+  <p class="text-muted">
+    You have successfully authenticated with your Devise account.
+    You are now ready to interact with this application.
+  </p>
+<% else %>
+  <p class="text-muted">You are not signed in.</p>
+  <p>
+    <a href="/users/sign_in">Sign in</a>
+  </p>
+<% end %>
